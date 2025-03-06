@@ -69,11 +69,11 @@ def restore_backup(backup_filename):
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.writelines(modified_lines)
                 
-                print(f"Restored: {file_path}, Linha: {match['line']}")
+                print(f"Restored: {file_path}, Line: {match['line']}")
             except Exception as e:
-                print(f"Erro ao restaurar {file_path}: {e}")
+                print(f"Error restoring {file_path}: {e}")
     except Exception as e:
-        print(f"Erro ao carregar backup: {e}")
+        print(f"Error loading backup: {e}")
 
 
 if __name__ == "__main__":
@@ -91,7 +91,7 @@ if __name__ == "__main__":
             backup_filename = "backup_results.json"
             with open(backup_filename, "w", encoding="utf-8") as json_file:
                 json.dump(backup_results, json_file, indent=4, ensure_ascii=False)
-            print(f"Backup salvo em {backup_filename}")
+            print(f"Backup saved in {backup_filename}")
     
     elif mode == "restore":
         backup_filename = "backup_results.json"
